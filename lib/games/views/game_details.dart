@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_yalla_harek/games/models/game_model.dart';
 import 'package:flutter_yalla_harek/games/services/firestore_service.dart';
-import 'package:flutter_yalla_harek/players/models/player_model.dart';
-import 'package:flutter_yalla_harek/players/views/player_item.dart';
 import 'package:flutter_yalla_harek/utils/colors.dart';
 import 'package:flutter_yalla_harek/utils/const.dart';
 import 'package:flutter_yalla_harek/utils/loading.dart';
 import 'package:maps_launcher/maps_launcher.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class GameDetails extends StatelessWidget {
   final GameModel model;
@@ -148,39 +147,16 @@ class GameDetails extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyText2,
                           ),
                           const Divider(height: 30),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  '${AppLocalizations.of(context)?.players}',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText2
-                                      ?.copyWith(fontWeight: FontWeight.w800),
-                                ),
-                              ),
-                              TextButton.icon(
-                                icon: const Icon(Icons.person_add),
-                                onPressed: () {
-                                  // TODO
-                                },
-                                label: Text(
-                                    '${AppLocalizations.of(context)?.add_player}'),
-                              ),
-                            ],
+                          TextButton.icon(
+                            icon: const Icon(Icons.person_add),
+                            onPressed: () async {
+                              var msgUrl =
+                                  "https://wa.me/?text=Hello bro,\nJoin us to this game:\n${model.title}\n${model.dateTime}\n${model.description}";
+                              await launchUrl(Uri.parse(msgUrl));
+                            },
+                            label: Text(
+                                '${AppLocalizations.of(context)?.add_player}'),
                           ),
-                          PlayerItem(
-                            model: PlayerModel(
-                              name: 'Ahmad Alsaleh',
-                              phone: '+951 784967',
-                            ),
-                          ),
-                          PlayerItem(
-                            model: PlayerModel(
-                              name: 'Ahmad Alsaleh',
-                              phone: '+951 784967',
-                            ),
-                          )
                         ],
                       ),
                     ),
