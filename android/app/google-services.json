@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "876131463885",
+    "project_id": "yallaharek-a562a",
+    "storage_bucket": "yallaharek-a562a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876131463885:android:8feb01da9cd6c299936f84",
+        "android_client_info": {
+          "package_name": "com.ahmadalsaleh.yallaharek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876131463885-kubo4s5n4gi6du8ro2k8nhfflb4g8vq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM44eaZGFLbf6K0LUY0_JmNKehcgECXjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876131463885-kubo4s5n4gi6du8ro2k8nhfflb4g8vq3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "876131463885-qleu36rjrkanlhn942c86h6rrca00acq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ahmadalsaleh.yallaharek"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
